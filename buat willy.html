@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>For My Favorite Boy 💗</title>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #ffe0ec, #e5d9ff);
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #4b3040;
+        }
+
+        .container {
+            max-width: 420px;
+            margin: auto;
+            background: white;
+            padding: 22px;
+            border-radius: 25px;
+            box-shadow: 0 5px 20px #d9a9c5;
+        }
+
+        h1 {
+            color: #e75480;
+        }
+
+        .foto {
+            font-size: 60px;
+            margin: 15px;
+        }
+
+        #chat {
+            background: #fff3f7;
+            border-radius: 15px;
+            padding: 15px;
+            min-height: 160px;
+            text-align: left;
+            line-height: 1.7;
+        }
+
+        .pesan {
+            background: #ffd6e5;
+            padding: 10px;
+            border-radius: 12px;
+            margin: 10px 0;
+        }
+
+        .kamu {
+            background: #e8ddff;
+            text-align: right;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 10px;
+            border: none;
+            border-radius: 15px;
+            background: #ff85a2;
+            color: white;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #e75480;
+        }
+
+        .kecil {
+            font-size: 12px;
+            color: #a17b91;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="foto">💌</div>
+
+    <h1>For My Favorite Boy</h1>
+
+    <p class="kecil">
+        a little surprise made just for you ♡
+    </p>
+
+    <div id="chat"></div>
+
+    <div id="pilihan"></div>
+
+</div>
+
+<script>
+
+    let chat = document.getElementById("chat");
+    let pilihan = document.getElementById("pilihan");
+
+    function kirim(nama, teks, tipe = "pesan") {
+        chat.innerHTML +=
+            `<div class="${tipe}">
+                <b>${nama}</b><br>
+                ${teks}
+            </div>`;
+
+        chat.scrollTop = chat.scrollHeight;
+    }
+
+    function tombol(teks, aksi) {
+        let btn = document.createElement("button");
+
+        btn.innerText = teks;
+        btn.onclick = aksi;
+
+        pilihan.appendChild(btn);
+    }
+
+    function mulai() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("ME 💗",
+            "hai canik, lagi apa?");
+
+        kirim("didut 💌",
+            "Lagi santai. Kenapa, sayang?");
+
+        kirim("ME 💗",
+            "aku punya sesuatu buat kamuuu hehe.");
+
+        kirim("SYSTEM",
+            "Pilih jawabanmu untuk melanjutkan cerita!");
+
+        tombol("Aku penasaran, apaan tuh? 👀", kejutan);
+        tombol("Pasti mau gombalin aku ya? 😏", gombal);
+    }
+
+    function kejutan() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("ME 💗",
+            "sebenernya aku cuma mau bilang sesuatu...");
+
+        kirim("BOY 💌",
+            "Apaan? Bilang ajaa.");
+
+        kirim("ME 💗",
+            "kamu tau nggak kenapa aku suka ngobrol sama kamu?");
+
+        tombol("Kenapaa? 🤔", alasan);
+    }
+
+    function alasan() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("ME 💗",
+            "karena sesimpel ngobrol sama kamu aja bisa bikin hariku lebih seru.");
+
+        kirim("ME 💗",
+            "makasih ya udah jadi bagian dari hari-hariku. ♡");
+
+        kirim("BOY 💌",
+            "Ih, jadi salting aku.");
+
+        tombol("Lanjut, aku masih punya pesan! 💌", pesanManis);
+    }
+
+    function gombal() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("ME 💗",
+            "emang kalau aku gombalin kamu, kamu bakal salting? 😏");
+
+        kirim("BOY 💌",
+            "Coba aja dulu.");
+
+        kirim("ME 💗",
+            "kamu tuh kayak Wi-Fi...");
+
+        tombol("Terusinnn, jangan bikin penasaran! 😂", wifi);
+    }
+
+    function wifi() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("ME 💗",
+            "soalnya kalau deket kamu, hati aku auto CONNECTED. 📶💗");
+
+        kirim("BOY 💌",
+            "YAAMPUN, GOMBAL BANGET 😭");
+
+        kirim("ME 💗",
+            "WKWKWK jangan ketawa, aku serius dikit ini.");
+
+        tombol("Kasih aku pesan rahasia 💌", pesanManis);
+    }
+
+    function pesanManis() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("💌 A LITTLE MESSAGE FOR YOU",
+            "hai cowok favorit akuuu ♡<br><br>" +
+            "kalau hari ini capek, istirahat dulu yaa. " +
+            "nggak harus selalu jadi orang paling kuat setiap saat.<br><br>" +
+            "aku harap kamu punya banyak alasan buat senyum hari ini. " +
+            "dan kalau kamu lagi sedih, semoga kamu inget kalau " +
+            "ada seseorang yang seneng banget bisa kenal kamu. 💗<br><br>" +
+            "jangan lupa makan, minum, dan jaga diri baik-baik yaa.<br><br>" +
+            "— from your favorite person ♡");
+
+        kirim("SYSTEM",
+            "🎉 CONGRATULATIONS! Kamu berhasil membuka pesan rahasia!");
+
+        tombol("Aku mau dipeluk virtual 🫂", peluk);
+        tombol("Buka pesan rahasia terakhir 💗", rahasia);
+    }
+
+    function peluk() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("ME 💗",
+            "siniii, peluk virtual duluu 🫂💗");
+
+        kirim("ME 💗",
+            "semoga semua hal baik pelan-pelan datang ke kamu yaa.");
+
+        tombol("Pesan terakhir dongg!", rahasia);
+    }
+
+    function rahasia() {
+        chat.innerHTML = "";
+        pilihan.innerHTML = "";
+
+        kirim("🔐 SECRET MESSAGE",
+            "PSSSTTT... 🤫<br><br>" +
+            "ada satu hal yang belum aku bilang...<br><br>" +
+            "KAMU ITU LUCU BANGET PAS LAGI SALTING WKWKWK 😭💗<br><br>" +
+            "makasih udah baca sampai akhir!<br>" +
+            "jangan lupa senyum hari ini yaa, ganteng. ♡");
+
+        kirim("💗 THE END",
+            "your personal happiness package has been delivered.");
+
+        tombol("🔄 Main lagi dari awal", mulai);
+    }
+
+    mulai();
+
+</script>
+
+</body>
+</html>
